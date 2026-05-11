@@ -13,11 +13,21 @@ public class Person {
         this.experiencePoints = experiencePoints;
     }
 
+    //interesting methods
     public boolean isAlive(){
         //return true if health is more than 0 and false if less or =
         return this.health > 0;
     }
 
+    public String getStatus(){
+        return this.name + " has " + this.health + " health";
+    }
+
+
+
+
+    //getters and setters
+    //out of the way because the are not interesting
     public String getName() {
         return name;
     }
@@ -34,7 +44,7 @@ public class Person {
         this.health = health;
     }
 
-    public int getExperiencePoints() {
+    protected int getExperiencePoints() {
         return experiencePoints;
     }
 
