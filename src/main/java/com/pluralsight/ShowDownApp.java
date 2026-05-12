@@ -6,51 +6,60 @@ public class ShowDownApp {
 
     public static void main(String[] args) {
 
-        SuperHero hero = new SuperHero("CodeMaster", 300, 10);
-        SuperVillian villain = new SuperVillian("Nullinator", 250, 7);
+        //create a list to hold our people
+        ArrayList<Person> myPeople = new ArrayList<>();
 
-        //equip them with power ups
-        //add some power ups to hero and villian
-        hero.addPowerUp("Bat", 10);
-        hero.addPowerUp("Throwing Star", 20);
-        hero.addPowerUp("Laser Phaser", 15);
+        Person somePerson = new Person("eric", 500, 100);
+        SuperHero someSuperHero = new SuperHero("Super Eric", 150, 50);
+        SuperVillian someVillian = new SuperVillian("Evil Lovi", 500, 65);
 
-        villain.addPowerUp("Crowbar", 5);
-        villain.addPowerUp("Blow Dart", 25);
-        villain.addPowerUp("BFG", 30);
+        myPeople.add(someVillian);
+        myPeople.add(somePerson);
+        myPeople.add(someSuperHero);
 
-        System.out.println("=== Welcome to the Super Showdown! ===");
-        System.out.println(hero.getStatus());
-        System.out.println(villain.getStatus());
+        for (Person person : myPeople){
 
-        while (hero.isAlive() && villain.isAlive()) {
-            System.out.println("\n-- Hero's Turn --");
-            hero.fight(villain);
-            System.out.println(villain.getStatus());
+            System.out.println("the person was a " + person.getClass());
 
-            if (!villain.isAlive()) {
-                break;
+            if(person instanceof SuperHero){
+
+                SuperHero theHero = (SuperHero) person;
+                System.out.println("this was a super hero " + theHero.getPowerLevel());
             }
 
-            System.out.println("\n-- Villain's Turn --");
-            villain.fight(hero);
-            System.out.println(hero.getStatus());
+            if(person instanceof SuperVillian){
+
+                SuperVillian theVillan = (SuperVillian) person;
+                System.out.println("this was a Villian " + theVillan.getEvilnessLevel());
+            }
+
+
+
+
         }
 
-        System.out.println("\n=== The Battle is Over! ===");
+        //print out some info about each Person
+        System.out.println(somePerson.getStatus());
+        System.out.println(someSuperHero.getStatus());
+        System.out.println(someVillian.getStatus());
+        System.out.println();
 
-        if (hero.isAlive()) {
-            System.out.println(hero.name + " wins the showdown!");
-        } else {
-            System.out.println(villain.name + " has defeated the hero!");
-        }
+//        System.out.println(someVillian.getName() + "has been attacked");
+//        someVillian.takeDamage(75);
+//        System.out.println(someVillian.getStatus());
+
+        //lets fight!
+        someSuperHero.fight(someVillian);
+        someVillian.fight(somePerson);
+        someVillian.fight(someSuperHero);
 
         System.out.println();
 
-        //show the battle log
-        hero.printBattleLog();
-        villain.printBattleLog();
-    }
+        System.out.println(somePerson.getStatus());
+        System.out.println(someSuperHero.getStatus());
+        System.out.println(someVillian.getStatus());
 
+
+    }
 
 }
