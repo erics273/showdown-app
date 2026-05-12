@@ -23,9 +23,8 @@ public class SuperHero extends Person {
         Random randomNumber = new Random();
         int baseDamage = randomNumber.nextInt(101); // this will give me a number between 0 and 100
 
-
-        //lets take that base damage plus our experience points for the final damage
-        int damage = baseDamage + this.getPowerLevel();
+        //supplement the damage number with the experience points for this superHero
+        int damage = baseDamage + this.experiencePoints;
 
         //figure out how we want to deal that damage to the opponent
         if(baseDamage == 0){
