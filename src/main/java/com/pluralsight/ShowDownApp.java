@@ -13,6 +13,10 @@ public class ShowDownApp {
         System.out.println(someSuperHero.getStatus());
         System.out.println(someVillian.getStatus());
 
+        System.out.println(someVillian.getName() + "has been attacked");
+        someVillian.takeDamage(75);
+        System.out.println(someVillian.getStatus());
+
 
     }
 

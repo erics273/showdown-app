@@ -23,8 +23,11 @@ public class Person {
         return this.name + " has " + this.health + " health";
     }
 
-
-
+    public void takeDamage(int amount){
+        //reduce the health by the amount of damage
+        this.health -= amount;
+        if(this.health < 0 ) health = 0;
+    }
 
     //getters and setters
     //out of the way because the are not interesting
