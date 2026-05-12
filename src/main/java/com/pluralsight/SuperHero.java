@@ -34,6 +34,7 @@ public class SuperHero extends Person {
             System.out.println(this.getName() + " lands a heroic punch on " + opponent.getName() + " dealing " + damage + " total damage");
             //deal the damage if the base damage wasnt 0
             opponent.takeDamage(damage);
+            this.logHit(opponent);
         }
     }
 

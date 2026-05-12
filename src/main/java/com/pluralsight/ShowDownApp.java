@@ -11,6 +11,9 @@ public class ShowDownApp {
         SuperHero hero = new SuperHero("CodeMaster", 300, 10);
         SuperVillian villain = new SuperVillian("Nullinator", 250, 7);
 
+        hero.addPowerUp("crowbar", 16);
+        villain.addPowerUp("gun", 35);
+
         //here i am just printing a header for the app and sharing the status of the hero an villian before the battle
         System.out.println("=== Welcome to the Super Showdown! ===");
         System.out.println(hero.getStatus());
@@ -50,6 +53,9 @@ public class ShowDownApp {
         }
 
         System.out.println();
+
+        hero.printBattleLog();
+        villain.printBattleLog();
     }
 
 
