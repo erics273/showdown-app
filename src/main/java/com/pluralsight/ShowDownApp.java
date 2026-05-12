@@ -17,6 +17,11 @@ public class ShowDownApp {
         someVillian.takeDamage(75);
         System.out.println(someVillian.getStatus());
 
+        //lets fight!
+        someSuperHero.fight(someVillian);
+        someVillian.fight(somePerson);
+        someVillian.fight(someSuperHero);
+
 
     }
 

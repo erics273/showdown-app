@@ -29,6 +29,10 @@ public class Person {
         if(this.health < 0 ) health = 0;
     }
 
+    public void fight(Person opponent){
+        System.out.println(this.getName() + " prepares to fight " + opponent.getName());
+    }
+
     //getters and setters
     //out of the way because the are not interesting
     public String getName() {
