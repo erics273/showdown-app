@@ -18,9 +18,11 @@ public class SuperVillian extends Person {
         Random randomNumber = new Random();
         int baseDamage = randomNumber.nextInt(101); // this will give me a number between 0 and 100
 
+        //generate bonus damage from random weapon in inventory
+        int bonusDamage = this.getPowerUpBonusRandom();
 
         //lets take that base damage plus our experience points for the final damage
-        int damage = baseDamage + this.getEvilnessLevel();
+        int damage = baseDamage + this.getEvilnessLevel() + bonusDamage;
 
         //figure out how we want to deal that damage to the opponent
         if (baseDamage == 0) {
@@ -30,6 +32,7 @@ public class SuperVillian extends Person {
             System.out.println(this.getName() + " hits " + opponent.getName() + " with a sneaky blast for " + damage + " total damage");
             //deal the damage if the base damage wasnt 0
             opponent.takeDamage(damage);
+            this.logHit(opponent);
         }
     }
 }

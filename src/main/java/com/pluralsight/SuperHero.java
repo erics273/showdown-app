@@ -23,9 +23,11 @@ public class SuperHero extends Person {
         Random randomNumber = new Random();
         int baseDamage = randomNumber.nextInt(101); // this will give me a number between 0 and 100
 
+        //generate bonus damage from random weapon in inventory
+        int bonusDamage = this.getPowerUpBonusRandom();
 
         //lets take that base damage plus our experience points for the final damage
-        int damage = baseDamage + this.getPowerLevel();
+        int damage = baseDamage + this.getPowerLevel() + bonusDamage;
 
         //figure out how we want to deal that damage to the opponent
         if(baseDamage == 0){
@@ -35,6 +37,7 @@ public class SuperHero extends Person {
             System.out.println(this.getName() + " lands a heroic punch on " + opponent.getName() + " dealing " + damage + " total damage");
             //deal the damage if the base damage wasnt 0
             opponent.takeDamage(damage);
+            this.logHit(opponent);
         }
     }
 
