@@ -53,7 +53,7 @@ public class SuperPerson {
     }
 
     public void fight(SuperPerson opponent){
-        System.out.printf("%s prepares to fight %s", getName(), opponent.getName());
+        System.out.printf("%s prepares to fight %s%n", getName(), opponent.getName());
     }
 
 }
