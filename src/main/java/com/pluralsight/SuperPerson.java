@@ -6,6 +6,11 @@ public class SuperPerson {
     private int health;
     private int experiencePoints;
 
+    public SuperPerson(String name, int health) {
+        this.name = name;
+        this.health = health;
+    }
+
     public String getName() {
         return name;
     }
