@@ -9,12 +9,11 @@ public class ShowdownApp {
 
        SuperHero hero = new SuperHero("Eric", 100, 25);
        SuperVillian villian = new SuperVillian("Jim", 100, 15);
-       SuperPerson bob = new SuperPerson("Bob", 100);
+
 
        ArrayList<SuperPerson> superPeople = new ArrayList<>();
        superPeople.add(hero);
        superPeople.add(villian);
-       superPeople.add(bob);
 
        for (SuperPerson person : superPeople) {
 

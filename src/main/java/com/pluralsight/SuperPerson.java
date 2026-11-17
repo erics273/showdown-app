@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class SuperPerson {
+public abstract class SuperPerson {
 
     private String name;
     private int health;
@@ -57,8 +57,6 @@ public class SuperPerson {
         return String.format("%s has %d health", getName(), getHealth());
     }
 
-    public void fight(SuperPerson opponent){
-        System.out.printf("%s prepares to fight %s%n", getName(), opponent.getName());
-    }
+    public abstract void fight(SuperPerson opponent);
 
 }
